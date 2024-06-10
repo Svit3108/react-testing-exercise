@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';  // Hier wird @testing-library/jest-dom/extend-expect importiert
 import TodoList from '../components/TodoList';
-
+import fetch from 'node-fetch';
+global.fetch = fetch;
 // Mock the fetch function
 global.fetch = jest.fn(() =>
   Promise.resolve({
